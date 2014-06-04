@@ -17,19 +17,6 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Application Index
-	|--------------------------------------------------------------------------
-	|
-	| If you are including the "index.php" in your URLs, you can ignore this.
-	| However, if you are using mod_rewrite to get cleaner URLs, just set
-	| this option to an empty string and we'll take care of the rest.
-	|
-	*/
-	 
-	'index' => '',
-
-	/*
-	|--------------------------------------------------------------------------
 	| Application URL
 	|--------------------------------------------------------------------------
 	|
@@ -91,7 +78,7 @@ return array(
 	|
 	*/
 
-	'key' => 'qAa94GONjdDl2nRsWXTtdcBTyKoW0eHy',
+	'key' => 'Vm4YDkKDQnSQ6pF1SkJP5HBaVSTBVn2i',
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
