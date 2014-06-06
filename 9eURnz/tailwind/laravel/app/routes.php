@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+Route::any('users',function()
+{
+	return 'Users!';
+});
+
+Route::get('authors','TestController@get_index');

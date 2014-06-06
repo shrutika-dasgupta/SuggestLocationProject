@@ -155,7 +155,7 @@ mysql:
             grant:
                 - ALL
             name: dbname
-            host: 'findmefood.app:8000'
+            host: localhost
             user: dbuser
             password: '123'
             sql_file: ''
