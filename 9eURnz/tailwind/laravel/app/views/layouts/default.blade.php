@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 	<head>
-		<title>Authors and Books</title>
+		<title>{{ $title }}</title>
 	</head>
 
 	<body>

@@ -20,4 +20,4 @@ Route::any('users',function()
 	return 'Users!';
 });
 
-Route::get('authors','TestController@get_index');
+Route::get('restro','TestController@get_index');

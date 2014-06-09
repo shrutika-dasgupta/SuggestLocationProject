@@ -3,15 +3,17 @@
 class TestController extends BaseController{
 
 	//Default action like a function in java
-	public $restful = true;
+	public $restful = true; 
 
 	public function get_index()
 	{
-		$view = View::make('authors.index',array('name'=>'Shrutika Dasupta'))->with('age','28');
+		return View::make('restros.index')
+			->with('title','Restaurants details');
 
-		$view->location = 'California';
-		$view['speciality'] = 'PHP';
-
-		return $view;
+		for($i= 0; $i < 5;$i++)
+		{
+			echo 'hello';
+		}
 	}
-}
+	
+}	
