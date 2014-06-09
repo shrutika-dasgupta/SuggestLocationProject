@@ -7,7 +7,7 @@ class TestController extends BaseController{
 
 	public function get_index()
 	{
-		$view = View::make('authors.index',array('name'=>'Shrutika Dasgupta'))->with('age','28');
+		$view = View::make('authors.index',array('name'=>'Shrutika Dasupta'))->with('age','28');
 
 		$view->location = 'California';
 		$view['speciality'] = 'PHP';

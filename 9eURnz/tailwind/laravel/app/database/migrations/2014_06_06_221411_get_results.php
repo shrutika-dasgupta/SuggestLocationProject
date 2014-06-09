@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TestTable extends Migration {
+class GetResults extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,7 @@ class TestTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema:: create('restro_list',function($table)
-		{
-			$table->increments('id');
-			$table->string('name');
-			$table->text('location');
-		});
+		$results = DB::select('select * from restro_list',array(1));
 	}
 
 	/**
@@ -27,7 +22,7 @@ class TestTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('restro_list');
+		
 	}
 
 }
