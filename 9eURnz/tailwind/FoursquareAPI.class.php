@@ -54,6 +54,7 @@ class FoursquareApi {
 	 */
 	public function GetPublic($endpoint,$params=false){
 		$url = $this->BaseUrl . trim($endpoint,"/");
+		$authenticated = false;
 		if(!$authenticated){
 			// Append the client details
 			$params['client_id'] = $this->ClientID;

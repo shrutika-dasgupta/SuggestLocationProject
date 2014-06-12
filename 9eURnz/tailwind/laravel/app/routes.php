@@ -16,6 +16,11 @@ Route::get('/', function()
 	return View::make('hello');
 });
 
+Route::get('hi', function()
+{
+	return View::make('helloTest');
+});
+
 
 Route::any('users',function()
 {
