@@ -54,11 +54,11 @@ return array(
 
 		'mysql' => array(
 			
-			'host' => 'localhost',
+			'host' 		=> 'localhost',
 			'driver'    => 'mysql',
-			'database'  => 'laravel',
-			'username'  => 'homestead',
-			'password'  => 'secret',
+			'database'  => 'restros',
+			'username'  => 'root',
+			'password'  => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

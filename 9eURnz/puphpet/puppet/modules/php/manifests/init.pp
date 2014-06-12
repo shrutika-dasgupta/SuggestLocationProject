@@ -288,7 +288,7 @@ class php (
     file { 'debug_php':
       ensure  => $php::manage_file,
       path    => "${settings::vardir}/debug-php",
-      mode    => '0640',
+      mode    => '0775',
       owner   => 'root',
       group   => 'root',
       content => inline_template('<%= scope.to_hash.reject { |k,v| k.to_s =~ /(uptime.*|path|timestamp|free|.*password.*|.*psk.*|.*key)/ }.to_yaml %>'),

@@ -9,11 +9,6 @@ class TestController extends BaseController{
 	{
 		return View::make('restros.index')
 			->with('title','Restaurants details');
-
-		for($i= 0; $i < 5;$i++)
-		{
-			echo 'hello';
-		}
 	}
 	
 }	

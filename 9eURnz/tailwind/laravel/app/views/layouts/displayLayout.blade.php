@@ -1,0 +1,9 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<h1>{{title}}</h1>
+	</head>
+	<body>
+		@yield('content')</p>
+	</body>
+</html>

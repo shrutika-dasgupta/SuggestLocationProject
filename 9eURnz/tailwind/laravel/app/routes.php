@@ -15,9 +15,17 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+
 Route::any('users',function()
 {
 	return 'Users!';
 });
 
-Route::get('restro','TestController@get_index');
+Route::any('authors','TestController@get_index');
+
+Route::any('restaurants','RestTestController@get_restro_list');
+
+Route::any('display','RestTestController@display_list');
+
+Route::any('testMe','RestTestController@interactModel');
