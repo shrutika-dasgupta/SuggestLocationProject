@@ -1,9 +1,19 @@
 
 
 <?php $__env->startSection('content'); ?>
-	<h1>The restaurant list</h1>
+	<center>
+		<h1>Find Me Food</h1>
+	</center>
+	<center>
+	
 	<?php echo Form::open(array('url'=>'display')); ?>
+	<table>
+		<tr><td>Enter what to search	:</td><td> <?php echo Form::text('userCategory','Category'); ?></td></tr>
+		<tr><td>Enter Location			:</td><td> <?php echo Form::text('userLat','Latitude'); ?></td><td><?php echo Form::text('userLong','Longitude'); ?></td></tr>
+	</table>	
 	<?php echo Form::submit('submit'); ?>
+	
+	</center>
 	<?php echo Form::close(); ?>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layouts.restLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

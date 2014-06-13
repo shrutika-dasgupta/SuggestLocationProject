@@ -5,6 +5,7 @@
 	</head>
 
 	<body>
+		<center>
 		@yield('content')
 	</body>
 </html>
