@@ -13,9 +13,14 @@ class RestTestController extends BaseController
 	{
 		$user = new Restro();
 
-		$value = $user->callFoursq();
+		$userAllValues  = Input::all();
+		Session::flash('allValues',$userAllValues);
+		Redirect::to('models/restro');
 
-		return View::make('restView.displayData',array('title'=>$value));
+		$value = $user->mainFunction();
+		$result = $user ->getData();
+
+		return View::make('restView.displayData',array('title'=>$value,'result'=>$result));
 	}
 
 	public function get_data()
