@@ -1,8 +1,16 @@
 <?php
 
+use Illuminate\Auth\UserTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\Reminders\RemindableInterface;
+
 class Restro extends Eloquent 
 {
-	public $table = 'restro';
+	public $table = 'members';
+
+	//protected $hidden = array('password', 'remember_token');
+	protected $fillable = array('id', 'name', 'address','distance','rating','categoriesId','categoriesName');
 
 	public function callFoursq()
 	{
@@ -24,13 +32,15 @@ class Restro extends Eloquent
 		$endpoint = "venues/explore";
 
 		// Prepare parameters
-		$params = array("section"=>"food","ll"=>"40.744749, -73.993705","v"=>"20141006","limit"=>"1");
+		$params = array("section"=>"food","ll"=>"40.744749, -73.993705","v"=>"20141006","limit"=>"50");
 		// Perform a request to a public resource
 		$response = $foursquare->GetPublic($endpoint,$params);
 		//print $response;
 		$result=json_decode($response);
 		$group = array();
 		$item = array();
+		$cat = array();
+
 		//var_dump($result);
 		$group= $result->response;
 
@@ -38,41 +48,40 @@ class Restro extends Eloquent
 		{
 			foreach ($item->items as $data) 
 			{
+
 				$id = $data->venue->id;
 				$name =$data->venue->name;
-				$address = $data->venue->location->address.", ".$data->venue->location->crossStreet.", ".$data->venue->location->city.", ".$data->venue->location->state;
-				$distance =$data->venue->location->distance;
+				$location = $data->venue->location;
+				$address = $location->address.", ".$location->city.", ".$location->state;
+				$distance =$location->distance;
 				$rating=$data->venue->rating;
 				foreach($data->venue->categories as $cat)
 				{
 					$categoriesId = $cat->id;
 					$categoriesName = $cat->name;
 				}
-				print $id."</br>".$name."</br>".$address."</br>".$distance."</br>".$rating."</br>".$categoriesId."</br>".$categoriesName."</br>";
+				//print $id."</br>".$name."</br>".$address."</br>".$distance."</br>".$rating."</br>".$categoriesId."</br>".$categoriesName."</br>";
 
-				/*
+				
 				try
 				{
-					$statement = $pdo->prepare('INSERT INTO members (id, name, address,distance,categoriesId,categoriesName,rating) VALUES (:var1,:var2,:var3,:var4,:var5,:var6,:var7)');
-							
-					$statement->execute(array(':var1'=>$id,':var2'=>$name,':var3'=>$address,':var4'=>$distance,':var5'=>$categoriesId,':var6'=>$categoriesName,':var7'=>$rating));	 
+					$rest = Restro::create(array('id'=>$id,'name'=>$name,'address'=>$address,'distance'=>$distance,'categoriesId'=>$categoriesId,'categoriesName'=>$categoriesName,'rating'=>$rating));
+				 	$rest ->save(); 
 				}
 				catch ( PDOException $exception )
 				{
 					echo "PDO error :" . $exception->getMessage();
 				}
-					*/
 			}
 		}
 		return "done";
 	}
 
-	public function insertRest()
+	public function getData()
 	{
-		$value = "hello";
-		//print $value."in model";
+		$results = Restro::all();
 
-		return $value;
-
+		print gettype($results);
+		return $results;
 	}
 }			

@@ -33,4 +33,4 @@ Route::any('restaurants','RestTestController@get_restro_list');
 
 Route::any('display','RestTestController@display_list');
 
-Route::any('testMe','RestTestController@interactModel');
+Route::any('getData','RestTestController@get_Data');

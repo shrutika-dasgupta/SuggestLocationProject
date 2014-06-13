@@ -1,0 +1,9 @@
+
+
+<?php $__env->startSection('content'); ?>
+	<h1>The restaurant list</h1>
+	<?php echo Form::open(array('url'=>'display')); ?>
+	<?php echo Form::submit('submit'); ?>
+	<?php echo Form::close(); ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.restLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

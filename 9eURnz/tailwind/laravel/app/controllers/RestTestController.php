@@ -11,15 +11,19 @@ class RestTestController extends BaseController
 
 	public function display_list()
 	{
-		$user = new Restro;
+		$user = new Restro();
 
 		$value = $user->callFoursq();
 
 		return View::make('restView.displayData',array('title'=>$value));
 	}
 
-	public function interactModel()
+	public function get_data()
 	{
-		
+		$user = new Restro();
+
+		$value = $user->getData();
+
+		return 	View::make('restView.displayData',array('all'=>$value,'title'=>'getData'));
 	}
 }

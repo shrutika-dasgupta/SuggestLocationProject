@@ -2,6 +2,7 @@
 
 @section('content')
 	<h1>hello everyone</h1>
-	<?php echo $title; ?>
-	
+	@foreach($all as $data)
+		{{$data->name}}</br>
+	@endforeach
 @stop

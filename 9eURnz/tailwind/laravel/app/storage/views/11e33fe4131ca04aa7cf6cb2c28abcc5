@@ -1,0 +1,9 @@
+
+
+<?php $__env->startSection('content'); ?>
+	<h1>hello everyone</h1>
+	<?php foreach($all as $data): ?>
+		<?php echo $data->name; ?></br>
+	<?php endforeach; ?>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.restLayout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
