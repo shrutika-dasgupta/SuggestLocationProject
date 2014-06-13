@@ -24,6 +24,6 @@ class RestTestController extends BaseController
 
 		$value = $user->getData();
 
-		return 	View::make('restView.displayData',array('all'=>$value,'title'=>'getData'));
+		return 	View::make('restView.getResults',array('all'=>$value,'title'=>'getData'));
 	}
 }

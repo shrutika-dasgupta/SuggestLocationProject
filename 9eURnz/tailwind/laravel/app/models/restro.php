@@ -32,7 +32,7 @@ class Restro extends Eloquent
 		$endpoint = "venues/explore";
 
 		// Prepare parameters
-		$params = array("section"=>"food","ll"=>"40.744749, -73.993705","v"=>"20141006","limit"=>"50");
+		$params = array("section"=>"food","ll"=>"40.8373, -73.8869","v"=>"20141006","limit"=>"50");
 		// Perform a request to a public resource
 		$response = $foursquare->GetPublic($endpoint,$params);
 		//print $response;
@@ -81,7 +81,6 @@ class Restro extends Eloquent
 	{
 		$results = Restro::all();
 
-		print gettype($results);
 		return $results;
 	}
 }			
